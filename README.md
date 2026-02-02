@@ -40,9 +40,9 @@ Final prediction = SARIMAX forecast + LSTM-predicted residuals
 
 ## 📊 Data Description
 
-Stock Data
+- Stock Data
 
-- Source: Colombo Stock Exchange (CSE)
+-- Source: Colombo Stock Exchange (CSE)
 
 - Frequency: Daily
 
