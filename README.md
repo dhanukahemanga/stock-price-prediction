@@ -4,19 +4,19 @@
 
 ---
 
-## 📌 Description
+## Description
 This repository contains the implementation of a **hybrid SARIMAX–LSTM time series forecasting model** developed to predict stock prices using macroeconomic indicators in an emerging market context.  
 The study focuses on **Sri Lanka Telecom (SLT)** stock prices and evaluates model robustness across different economic regimes.
 
 ---
 
-## 🎯 Problem Statement
+## Problem Statement
 Traditional statistical models struggle to capture non-linear market dynamics, while machine learning models often lack economic interpretability.  
 This project addresses this gap by combining **econometric modeling** and **deep learning** into a single hybrid framework.
 
 ---
 
-## 🧠 Methodology
+## Methodology
 The modeling pipeline consists of three stages:
 
 - **SARIMAX**
@@ -34,7 +34,7 @@ The modeling pipeline consists of three stages:
 
 ---
 
-## 📊 Data
+## Data
 ### Stock Market Data
 - Company: Sri Lanka Telecom PLC (SLT)
 - Frequency: Daily
@@ -50,7 +50,7 @@ The modeling pipeline consists of three stages:
 
 ---
 
-## 🗂️ Market Regimes
+## Market Regimes
 The dataset is segmented into three economic periods:
 
 - **Pre-COVID**: Stable market conditions  
@@ -61,7 +61,7 @@ Models are trained and evaluated separately for each regime.
 
 ---
 
-## ⚙️ Data Processing
+## Data Processing
 - Stationarity testing and differencing
 - Difference of stock prices
 - Lagged macroeconomic feature engineering
@@ -70,7 +70,7 @@ Models are trained and evaluated separately for each regime.
 
 ---
 
-## 📈 Evaluation Metrics
+## Evaluation Metrics
 Model performance is evaluated using:
 
 - Root Mean Square Error (**RMSE**)
@@ -79,7 +79,7 @@ Model performance is evaluated using:
 
 ---
 
-## 🚀 Results
+## Results
 - Hybrid SARIMAX–LSTM model achieved:
   - ~22% reduction in RMSE compared to standalone SARIMAX
   - ~18% reduction in MAE compared to baseline machine learning models
@@ -88,7 +88,7 @@ Model performance is evaluated using:
 
 ---
 
-## 🛠️ Tools & Technologies
+## Tools & Technologies
 - Python
 - pandas, numpy
 - statsmodels
