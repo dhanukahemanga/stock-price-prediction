@@ -1,107 +1,99 @@
 # 📈 Forecasting Stock Prices Using Macroeconomic Indicators
-A Hybrid SARIMAX–LSTM Modeling Approach for an Emerging Market
+  
+## Hybrid SARIMAX–LSTM Modeling Approach (Emerging Market Case Study)
 
-## Project Overview
+---
 
-This project focuses on forecasting stock prices in an emerging market context by integrating macroeconomic indicators with hybrid time-series and deep learning models.
-Using Sri Lanka Telecom (SLT) stock as a case study, the project combines statistical modeling (SARIMAX) and deep learning (LSTM) to capture both linear/seasonal patterns and nonlinear market dynamics across different economic regimes.
+## 📌 Description
+This repository contains the implementation of a **hybrid SARIMAX–LSTM time series forecasting model** developed to predict stock prices using macroeconomic indicators in an emerging market context.  
+The study focuses on **Sri Lanka Telecom (SLT)** stock prices and evaluates model robustness across different economic regimes.
 
-The model is evaluated under Pre-COVID, COVID, and Post-COVID market conditions to assess robustness during periods of economic stability and volatility.
+---
 
-## Objectives
+## 🎯 Problem Statement
+Traditional statistical models struggle to capture non-linear market dynamics, while machine learning models often lack economic interpretability.  
+This project addresses this gap by combining **econometric modeling** and **deep learning** into a single hybrid framework.
 
-- Analyze the impact of macroeconomic indicators (inflation, interest rate, exchange rate, GDP) on stock prices
-- Build and compare statistical, machine learning, and hybrid forecasting models
-- Improve forecasting accuracy over standalone models
-- Provide an interpretable and robust framework for emerging market stock prediction
+---
 
-## Methodology
-Modeling Framework
+## 🧠 Methodology
+The modeling pipeline consists of three stages:
 
-1. SARIMAX
+- **SARIMAX**
+  - Models linear trends and seasonality
+  - Incorporates macroeconomic variables as exogenous regressors
 
-- Captures linear trends, seasonality, and macroeconomic effects
+- **LSTM**
+  - Captures non-linear temporal dependencies
+  - Learns long-term memory effects in stock price movements
 
-- Uses lagged macroeconomic variables as exogenous regressors
+- **Hybrid SARIMAX–LSTM**
+  - SARIMAX forecasts the linear component
+  - LSTM models residual (non-linear) patterns
+  - Final forecast = SARIMAX output + LSTM residual prediction
 
-2. LSTM
+---
 
-- Learns nonlinear temporal dependencies and long-term memory patterns
-
-- Applied to standardized residuals and selected macro features
-
-3. Hybrid SARIMAX–LSTM
-
-- SARIMAX models linear components
-
-- LSTM models nonlinear residual dynamics
-
-Final prediction = SARIMAX forecast + LSTM-predicted residuals
-
-## 📊 Data Description
-
-- Stock Data
-
--- Source: Colombo Stock Exchange (CSE)
-
+## 📊 Data
+### Stock Market Data
+- Company: Sri Lanka Telecom PLC (SLT)
 - Frequency: Daily
+- Period: 2009 – 2025
+- Source: Colombo Stock Exchange (CSE)
 
-- Period: July 2009 – June 2025
-
-Variables: Open, High, Low, Close, Volume
-
-Macroeconomic Data
-
-- Source: Central Bank of Sri Lanka (CBSL)
-
-- Frequency: Monthly (aligned to daily data)
-
-Variables:
-
-- Inflation Rate
-
-- Interest Rate
-
+### Macroeconomic Indicators
+- Inflation Rate (%)
+- Interest Rate (%)
 - Exchange Rate (LKR/USD)
+- Gross Domestic Product (GDP)
+- Source: Central Bank of Sri Lanka (CBSL) and Department of Census and Statistics
 
-- GDP
+---
 
-## Evaluation Metrics
+## 🗂️ Market Regimes
+The dataset is segmented into three economic periods:
 
-Model performance is evaluated using error-based metrics:
+- **Pre-COVID**: Stable market conditions  
+- **COVID**: High volatility and structural breaks  
+- **Post-COVID**: Market recovery and normalization  
 
-- RMSE (Root Mean Squared Error)
+Models are trained and evaluated separately for each regime.
 
-- MAE (Mean Absolute Error)
+---
 
-- MAPE / sMAPE
+## ⚙️ Data Processing
+- Stationarity testing and differencing
+- Difference of stock prices
+- Lagged macroeconomic feature engineering
+- Feature scaling (Min-Max / Standardization)
+- Residual extraction for hybrid modeling
 
-🏆 Key Results
+---
 
-Hybrid SARIMAX–LSTM achieved:
+## 📈 Evaluation Metrics
+Model performance is evaluated using:
 
-- ~22% RMSE reduction compared to standalone SARIMAX
+- Root Mean Square Error (**RMSE**)
+- Mean Absolute Error (**MAE**)
+- Mean Absolute Percentage Error (**MAPE / sMAPE**)
 
-- ~18% MAE reduction compared to baseline machine learning models
+---
 
-- Demonstrated higher robustness during COVID-period volatility
+## 🚀 Results
+- Hybrid SARIMAX–LSTM model achieved:
+  - ~22% reduction in RMSE compared to standalone SARIMAX
+  - ~18% reduction in MAE compared to baseline machine learning models
+- Improved robustness during high-volatility (COVID) period
+- Demonstrated effectiveness of macroeconomic-driven forecasting
 
-- Improved short-term (1-month) forecasting stability in an emerging market setting
+---
 
-## 🛠️ Tech Stack
+## 🛠️ Tools & Technologies
+- Python
+- pandas, numpy
+- statsmodels
+- scikit-learn
+- TensorFlow / Keras
+- matplotlib
 
-- Programming Language: Python 3.10
-
-Libraries & Tools:
-
-- Pandas, NumPy
-
-- Statsmodels (SARIMAX)
-
-- Scikit-learn
-
-- TensorFlow / Keras (LSTM)
-
-- Matplotlib, Seaborn
-
-Environment: Google Colab (GPU-enabled)
+---
